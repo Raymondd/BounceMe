@@ -3,6 +3,21 @@
 
     <string name="app_name">Bounce Me</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="play">Play</string>
+    <string name="credits">Credits</string>
 
+    
+  	<string-array name="levelNames">
+        <item>Level One</item>
+        <item>Level Two</item>
+        <item>Level Three</item>
+        <item>Level Four</item>
+        <item>Level Five</item>
+        <item>Level Six</item>
+        <item>Level Seven</item>
+        <item>Level Eight</item>
+        <item>Level Nine</item>
+        <item>Level Ten</item>
+    </string-array>
+    
 </resources>
