@@ -58,7 +58,8 @@ public class Sling {
 				Log.d("OUTPUT", "bottom: " + (centerY + radius) + "/ Y: " + Y);
 				forced = true;
 				
-				int x1 = centerX - leftX;
+				//Mathematical logic for physics on the sling can be found here - "http://www.emanueleferonato.com/2007/08/13/throw-a-ball-with-a-sling-physics-flash-tutorial/"
+                int x1 = centerX - leftX;
 				int y1 = centerY - Y;
 				int x2 = rightX - centerX;
 				int y2 = Y - centerY;
