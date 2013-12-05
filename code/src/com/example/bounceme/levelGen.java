@@ -14,13 +14,15 @@ import android.view.SurfaceView;
 public class levelGen extends Activity {
 
 	MySurfaceView mySurfaceView;
-
+	int i;
+	
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		mySurfaceView = new MySurfaceView(this);
 		setContentView(mySurfaceView);
+		i = 0;
 	}
 
 	@Override
@@ -45,12 +47,12 @@ public class levelGen extends Activity {
 		
 		private Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 		Random random;
-		
-		Ball mBall = new Ball();
+
+		private Level[] levels = new Level[10];
 		
 		public MySurfaceView(Context context) {
 			super(context);
-			
+			popLevels();
 			surfaceHolder = getHolder();
 		}
 
@@ -75,9 +77,7 @@ public class levelGen extends Activity {
 		}
 		
 		public boolean onTouchEvent(MotionEvent event) {
-		    if(mBall != null){
-		    	mBall.onTouch(event.getX());
-		    }
+			levels[i].moveBall(((int) event.getX()));
 		    return true;
 		}
 		
@@ -98,9 +98,7 @@ public class levelGen extends Activity {
 					canvas.drawRect(0, 0, w, h, paint);
 					
 					//updating our element's positions and drawing them
-					if(mBall.update(w, h)){
-						mBall.draw(canvas);
-					}
+					levels[i].animate(canvas, w, h);
 					
 					
 
@@ -109,6 +107,12 @@ public class levelGen extends Activity {
 				}
 			}
 		}
-
+		
+		private void popLevels(){
+			//Populating Level1
+			Sling slings[] = { new Sling(400, 400, 200), new Sling(800, 400, 200) };
+			Ball ball = new Ball(100, 100);
+			levels[0] = new Level(slings, ball);
+		}
 	}
 }

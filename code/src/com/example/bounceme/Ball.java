@@ -5,24 +5,26 @@ import android.graphics.Paint;
 import android.util.Log;
 
 public class Ball {
-	private int radius = 12;
+	private int radius = 20;
 	private final double gravity = .1;
-	private final int startX = 145;
-	private final int startY = 100;
+	private int startX;
+	private int startY;
 	private double yacc = gravity;
 	private double xacc = 0;
 	private double xspeed = 0;
 	private double yspeed = 0;
-	private int xpos = startX;
-	private int ypos = startY;
+	private int xpos;
+	private int ypos;
 	private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-	private boolean draw = true;
 	private int canvasWidth;
 	private int canvasHeight;
 	
 	
-	public Ball(){
+	public Ball(int x , int y){
+		xpos = startX = x;
+		ypos = startY = y;
 		mPaint.setColor(0xff00ff00);
+		mPaint.setStrokeWidth(4);
 	}
 	
 	public void draw(Canvas can){
@@ -40,6 +42,10 @@ public class Ball {
 			return false;
 		}
 		
+		/*if(ypos > canvasHeight){
+			ypos = 0;
+		}*/
+		
 		xpos += xspeed;
 		ypos += yspeed;
 		
@@ -47,11 +53,19 @@ public class Ball {
 		yacc = gravity;
 		
 		
-		if (xspeed > 7){ 
-			xspeed = 7;
-		}else if(xspeed < -7){
-			xspeed = -7;
+		//setting terminal velocity in the x and y planes
+		if (xspeed > 10){ 
+			xspeed = 10;
+		}else if(xspeed < -10){
+			xspeed = -10;
 		}
+		
+		if (yspeed > 10){ 
+			yspeed = 10;
+		}else if(yspeed < -10){
+			yspeed = -10;
+		}
+		
 		
 		return true;
 	}
@@ -65,6 +79,32 @@ public class Ball {
 			Log.d("OUTPUT", "RIGHT");
 			xacc = 1;
 		}
+	}
+	
+	public void restart(){
+		xpos = startX;
+		ypos = startY;
+		yspeed = 0;
+		xspeed = 0;
+		yacc = 0;
+		xacc = 0;
+	}
+	
+	public void setAcc(int xAdd, int yAdd){
+		xacc = xAdd;
+		yacc = yAdd;
+	}
+	
+	public int getX(){
+		return xpos;
+	}
+	
+	public int getY(){
+		return ypos;
+	}
+	
+	public int getRadius(){
+		return radius;
 	}
 }
 
