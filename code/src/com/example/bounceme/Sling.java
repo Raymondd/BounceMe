@@ -11,7 +11,7 @@ public class Sling {
 	private int midX, midY, midX2, midY2;
 	private int x, y;
 	private int width;
-	private final double bounce = .01;
+	private final double bounce = .0055;
 	boolean above = true;
 	boolean forced = false;
 
@@ -55,7 +55,6 @@ public class Sling {
 		
 		if(centerY + radius > Y - 2 && centerX > leftX && centerX < rightX){
 			if(forced || above){
-				Log.d("OUTPUT", "bottom: " + (centerY + radius) + "/ Y: " + Y);
 				forced = true;
 				
 				//Mathematical logic for physics on the sling can be found here - "http://www.emanueleferonato.com/2007/08/13/throw-a-ball-with-a-sling-physics-flash-tutorial/"
@@ -77,7 +76,7 @@ public class Sling {
 				midY2 = (int) (centerY + Math.sin(a2 + 3.14/2)*radius);
 				
 				a1 += Math.sin(radius/d1);
-				a2 += -(Math.sin(radius/d2));
+				a2 -= Math.sin(radius/d2);
 			}
 		}else{
 			forced = false;
@@ -92,6 +91,7 @@ public class Sling {
 	        xacc += d2*Math.sin(a1)*bounce;
 	        yacc -= d2*Math.cos(a2)*bounce;
 	        
+	        Log.d("OUPUT", "(" + xacc + "," + yacc + ")");
 	        ball.setAcc((int) xacc, (int) yacc);
 		}
 		

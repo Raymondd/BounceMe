@@ -13,7 +13,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class levelPicker extends Activity {
 
@@ -34,9 +33,11 @@ public class levelPicker extends Activity {
 
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-	            Toast.makeText(levelPicker.this, "" + position, Toast.LENGTH_SHORT).show();
-				Intent i = new Intent(levelPicker.this, levelGen.class);
- 				startActivity(i);
+	            
+	            Intent i = new Intent(levelPicker.this, levelGen.class);
+ 				Log.d("passed", "" + (position + 1));
+	            i.putExtra("level", (position + 1));
+	            startActivity(i);
 	        }
 	    });
 	    
@@ -62,12 +63,13 @@ public class levelPicker extends Activity {
 	        if (convertView == null) {  // if it's not recycled, initialize some attributes
 	        	LayoutInflater i = getLayoutInflater();
 	        	v = i.inflate(R.layout.grid_item, null);
-	        	TextView name = (TextView) v.findViewById(R.id.name);
 	        	Log.d("OUTPUT", "" + position);
-	        	name.setText(mNames[position]);
 	        } else {
 	            v = convertView;
 	        }
+	        
+	        TextView name = (TextView) v.findViewById(R.id.name);
+	        name.setText(mNames[position]);
 	        return v;
 	    }
 	    

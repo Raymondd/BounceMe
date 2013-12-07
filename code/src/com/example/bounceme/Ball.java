@@ -72,12 +72,9 @@ public class Ball {
 	
 	public void onTouch(float x){
 		if(x < (canvasWidth/2)){
-			Log.d("OUTPUT", "LEFT");
-			xacc = -1;
-			
+			xacc = -.2;
 		}else{
-			Log.d("OUTPUT", "RIGHT");
-			xacc = 1;
+			xacc = .2;
 		}
 	}
 	
@@ -90,7 +87,7 @@ public class Ball {
 		xacc = 0;
 	}
 	
-	public void setAcc(int xAdd, int yAdd){
+	public void setAcc(double xAdd, double yAdd){
 		xacc = xAdd;
 		yacc = yAdd;
 	}
