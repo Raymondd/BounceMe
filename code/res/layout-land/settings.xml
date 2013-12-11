@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/orange">
+    
+    <TextView 
+        android:text="Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="75sp"
+        android:textColor="@color/blue"
+        android:layout_margin="20dp"/>
+    
+    <ToggleButton 
+        android:id="@+id/action"
+        android:textOn="Accelerometer Ball Movement"
+        android:textOff="Touch Ball Movement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:textColor="@color/blue"
+        android:layout_margin="20dp"/>
+    
+    <Button 
+        android:id="@+id/prog"
+        android:text="Reset Level Progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:background="@drawable/buttons"
+        android:textColor="@color/blue"
+        android:layout_margin="20dp"
+        android:padding="10dp"/>
+    
+    <Button 
+        android:id="@+id/back"
+        android:text="back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:background="@drawable/buttons"
+        android:textColor="@color/blue"
+        android:padding="10dp"/>
+
+</LinearLayout>

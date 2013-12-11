@@ -32,16 +32,36 @@ public class MenuActivity extends Activity {
 
 		
 		
-		Button play_button = (Button) findViewById(R.id.playButton);
+		Button play = (Button) findViewById(R.id.playButton);
 		
-		play_button.setOnClickListener(new OnClickListener() {
+		play.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(MenuActivity.this, levelPicker.class);
+ 				startActivity(i);				
+			}
+		});
+		
+		Button credit = (Button) findViewById(R.id.creditsButton);
+		
+		credit.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(MenuActivity.this, CreditActivity.class);
  				startActivity(i);
-				
-				
+			}
+		});
+		
+		Button settings = (Button) findViewById(R.id.settingsButton);
+		
+		settings.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(MenuActivity.this, SetActivity.class);
+ 				startActivity(i);
 			}
 		});
 	}

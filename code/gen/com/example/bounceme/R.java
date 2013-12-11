@@ -39,8 +39,9 @@ public final class R {
         public static final int star=0x7f020005;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a000b;
-        public static final int back=0x7f0a000a;
+        public static final int action=0x7f0a000a;
+        public static final int action_settings=0x7f0a000d;
+        public static final int back=0x7f0a000c;
         public static final int creditsButton=0x7f0a0002;
         public static final int frame=0x7f0a0005;
         public static final int gridview=0x7f0a0004;
@@ -49,15 +50,18 @@ public final class R {
         public static final int name=0x7f0a0003;
         public static final int playButton=0x7f0a0000;
         public static final int popoutButton=0x7f0a0007;
+        public static final int prog=0x7f0a000b;
         public static final int restartButton=0x7f0a0009;
         public static final int settingsButton=0x7f0a0001;
     }
     public static final class layout {
         public static final int activity_menu=0x7f030000;
-        public static final int grid_item=0x7f030001;
-        public static final int level_grid=0x7f030002;
-        public static final int play_screen=0x7f030003;
-        public static final int win=0x7f030004;
+        public static final int credits=0x7f030001;
+        public static final int grid_item=0x7f030002;
+        public static final int level_grid=0x7f030003;
+        public static final int play_screen=0x7f030004;
+        public static final int settings=0x7f030005;
+        public static final int win=0x7f030006;
     }
     public static final class menu {
         public static final int menu=0x7f090000;

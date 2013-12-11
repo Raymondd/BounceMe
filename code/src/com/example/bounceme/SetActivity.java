@@ -1,57 +1,26 @@
 package com.example.bounceme;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class WinActivity extends Activity {
+public class SetActivity extends Activity {
 
-	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.win);
-		
-		Intent i = getIntent();
-		int levelNum = i.getIntExtra("level", 1);
-		
-		SharedPreferences prefs = this.getSharedPreferences("prefs", Context.MODE_PRIVATE);
-		Editor editor = prefs.edit();
-		editor.putInt("level", levelNum + 1);
-		editor.commit();
-		
-		Button back = (Button) findViewById(R.id.back);
-		
-		back.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(WinActivity.this, levelPicker.class);
- 				startActivity(i);
-			}
-		});
+		setContentView(R.layout.settings);
 		
 		Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/shades.ttf");
 		ViewGroup parent = ((ViewGroup)getWindow().getDecorView());
 		setTypeFace(tf, parent);
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.menu, menu);
-		return true;
-	}
-
+	
+	
 	public static void setTypeFace(Typeface custom, ViewGroup parent){
 		for(int i = 0; i < parent.getChildCount(); i++){
 			View v = parent.getChildAt(i);

@@ -46,6 +46,20 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         
+     	<activity
+            android:name="com.example.bounceme.CreditActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        
+     	<activity
+            android:name="com.example.bounceme.SetActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        
     </application>
 
 </manifest>

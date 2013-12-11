@@ -3,7 +3,7 @@ package com.example.bounceme;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Paint;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,15 +13,18 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
 public class levelPicker extends Activity {
-
+	int level;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		SharedPreferences prefs = this.getSharedPreferences("prefs", Context.MODE_PRIVATE);
+		level = prefs.getInt("level", 1);
+		Log.d("OUTPUT", "Level: " + level);
 		
 		/*
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -31,16 +34,17 @@ public class levelPicker extends Activity {
         
 		setContentView(R.layout.level_grid);
 		
+		
 		GridView gridview = (GridView) findViewById(R.id.gridview);
 		gridview.setAdapter(new GridAdapter(this));
 
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
 	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-	            
-	            Intent i = new Intent(levelPicker.this, levelGen.class);
- 				Log.d("passed", "" + (position + 1));
-	            i.putExtra("level", (position + 1));
-	            startActivity(i);
+	            if(position < level){
+	            	Intent i = new Intent(levelPicker.this, levelGen.class);
+	            	i.putExtra("level", (position + 1));
+	            	startActivity(i);
+	            }
 	        }
 	    });
 	}
@@ -71,7 +75,11 @@ public class levelPicker extends Activity {
 	        }
 	        
 	        TextView name = (TextView) v.findViewById(R.id.name);
-	        name.setText(mNames[position]);
+	        if(position < level){
+	        	name.setText(mNames[position]);
+	        }else{
+	        	name.setText(mNames[position] + " LOCKED");
+	        }
 	        name.setTypeface(tf);
 	        return v;
 	    }

@@ -120,6 +120,7 @@ class PlaySurfaceView extends SurfaceView implements Runnable {
 				 }else if(result == "win"){
 					 Context context = getContext(); // from MySurfaceView/Activity
 					 Intent intent = new Intent(context, WinActivity.class);
+					 intent.putExtra("level", levelNum);
 					 context.startActivity(intent);
 				 }
 				 
