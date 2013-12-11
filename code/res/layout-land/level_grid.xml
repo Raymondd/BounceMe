@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridView xmlns:android="http://schemas.android.com/apk/res/android" 
+<LinearLayout 
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="match_parent" 
+   android:layout_height="match_parent" 
+   android:orientation="vertical"
+   android:background="@color/orange">
+
+<Button 
+     android:id="@+id/back"
+     android:text="back"
+     android:layout_width="match_parent" 
+     android:layout_height="wrap_content" 
+     android:background="@drawable/buttons"
+     android:layout_gravity="center_horizontal|bottom"
+     android:textColor="@color/blue"
+     android:padding="10dp"
+     android:textSize="50dp"/>  
+    
+<GridView 
     android:id="@+id/gridview"
     android:layout_width="match_parent" 
     android:layout_height="match_parent"
@@ -8,7 +26,8 @@
     android:numColumns="2"
     android:stretchMode="columnWidth"
     android:gravity="center"
-    android:background="@color/blue"
-/>
+    android:background="@color/blue"/>  
+
+</LinearLayout>
     
     

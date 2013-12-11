@@ -67,6 +67,17 @@ public class levelGen extends Activity {
 		Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/shades.ttf");
 		ViewGroup parent = ((ViewGroup)getWindow().getDecorView());
 		setTypeFace(tf, parent);
+		
+		Button menu = (Button) findViewById(R.id.menuButton);
+		
+		menu.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				finish();
+				
+			}
+		});
 	}
 
 	public void restart(){

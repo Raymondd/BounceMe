@@ -14,11 +14,13 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int black=0x7f040005;
         public static final int blue=0x7f040004;
         public static final int green=0x7f040001;
         public static final int orange=0x7f040000;
         public static final int purple=0x7f040003;
         public static final int red=0x7f040002;
+        public static final int white=0x7f040006;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -39,19 +41,19 @@ public final class R {
         public static final int star=0x7f020005;
     }
     public static final class id {
-        public static final int action=0x7f0a000a;
+        public static final int action=0x7f0a000b;
         public static final int action_settings=0x7f0a000d;
-        public static final int back=0x7f0a000c;
+        public static final int back=0x7f0a0003;
         public static final int creditsButton=0x7f0a0002;
-        public static final int frame=0x7f0a0005;
-        public static final int gridview=0x7f0a0004;
-        public static final int linearLayout2=0x7f0a0006;
-        public static final int menuButton=0x7f0a0008;
-        public static final int name=0x7f0a0003;
+        public static final int frame=0x7f0a0006;
+        public static final int gridview=0x7f0a0005;
+        public static final int linearLayout2=0x7f0a0007;
+        public static final int menuButton=0x7f0a0009;
+        public static final int name=0x7f0a0004;
         public static final int playButton=0x7f0a0000;
-        public static final int popoutButton=0x7f0a0007;
-        public static final int prog=0x7f0a000b;
-        public static final int restartButton=0x7f0a0009;
+        public static final int popoutButton=0x7f0a0008;
+        public static final int reset=0x7f0a000c;
+        public static final int restartButton=0x7f0a000a;
         public static final int settingsButton=0x7f0a0001;
     }
     public static final class layout {

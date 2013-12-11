@@ -70,11 +70,18 @@ public class Ball {
 		return true;
 	}
 	
-	public void onTouch(float x){
-		if(x < (canvasWidth/2)){
+	//how to ball moves when it is touched
+	public void onTouch(int x){
+		if(x == -1){
+			xacc = -.1;
+		}else if(x == -2){
 			xacc = -.2;
-		}else{
+		}else if(x == 1){
+			xacc = .1;
+		}else if(x == 2){
 			xacc = .2;
+		}else{
+			xacc = 0;
 		}
 	}
 	

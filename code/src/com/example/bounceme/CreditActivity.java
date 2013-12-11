@@ -18,6 +18,16 @@ public class CreditActivity extends Activity {
 		Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/shades.ttf");
 		ViewGroup parent = ((ViewGroup)getWindow().getDecorView());
 		setTypeFace(tf, parent);
+		
+		//back button finishes the activity and goes back to the previous one
+		Button back = (Button) findViewById(R.id.back);
+		
+		back.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});		
 	}
 	
 	

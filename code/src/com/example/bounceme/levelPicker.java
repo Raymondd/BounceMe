@@ -13,28 +13,36 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
 public class levelPicker extends Activity {
 	int level;
+	Typeface tf;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		SharedPreferences prefs = this.getSharedPreferences("prefs", Context.MODE_PRIVATE);
 		level = prefs.getInt("level", 1);
-		Log.d("OUTPUT", "Level: " + level);
+		tf = Typeface.createFromAsset(getAssets(), "fonts/shades.ttf");
 		
-		/*
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
-                                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        */
-        
 		setContentView(R.layout.level_grid);
 		
+		//setting the type face for back and giving it a click listener to go back to the previous activity
+		Button back = (Button) findViewById(R.id.back);
+		back.setTypeface(tf);
+		back.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(levelPicker.this, MenuActivity.class);
+				startActivity(i);
+			}
+		});
 		
+		//giving grid view an adapter and setting an onclick event listener for its children
 		GridView gridview = (GridView) findViewById(R.id.gridview);
 		gridview.setAdapter(new GridAdapter(this));
 
@@ -52,7 +60,6 @@ public class levelPicker extends Activity {
 	public class GridAdapter extends BaseAdapter {
 	    private Context mContext;
 	    private String[] mNames;
-	    Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/shades.ttf");
 	    
 		public GridAdapter(Context c) {
 			mContext = c;
@@ -77,9 +84,12 @@ public class levelPicker extends Activity {
 	        TextView name = (TextView) v.findViewById(R.id.name);
 	        if(position < level){
 	        	name.setText(mNames[position]);
+	        	name.setTextColor(getResources().getColor(R.color.white));
 	        }else{
-	        	name.setText(mNames[position] + " LOCKED");
+	        	name.setText(mNames[position] + " *LOCKED*");
+	        	name.setTextColor(getResources().getColor(R.color.blue));
 	        }
+	        
 	        name.setTypeface(tf);
 	        return v;
 	    }

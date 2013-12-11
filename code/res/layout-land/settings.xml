@@ -25,19 +25,20 @@
         android:layout_margin="20dp"/>
     
     <Button 
-        android:id="@+id/prog"
+        android:id="@+id/reset"
         android:text="Reset Level Progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="50sp"
         android:background="@drawable/buttons"
         android:textColor="@color/blue"
-        android:layout_margin="20dp"
+        android:layout_marginBottom="20dp"
         android:padding="10dp"/>
     
     <Button 
         android:id="@+id/back"
         android:text="back"
+        android:layout_margin="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="50sp"

@@ -26,9 +26,14 @@ public class WinActivity extends Activity {
 		int levelNum = i.getIntExtra("level", 1);
 		
 		SharedPreferences prefs = this.getSharedPreferences("prefs", Context.MODE_PRIVATE);
-		Editor editor = prefs.edit();
-		editor.putInt("level", levelNum + 1);
-		editor.commit();
+		int mlevel = prefs.getInt("level", 1);
+		
+		//write to the new level only if the level beat is higher then the previously highest level beat
+		if(mlevel < (levelNum + 1)){
+			Editor editor = prefs.edit();
+			editor.putInt("level", levelNum + 1);
+			editor.commit();
+		}
 		
 		Button back = (Button) findViewById(R.id.back);
 		
