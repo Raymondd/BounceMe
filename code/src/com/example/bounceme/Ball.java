@@ -2,7 +2,6 @@ package com.example.bounceme;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.util.Log;
 
 public class Ball {
 	private int radius = 20;
@@ -16,6 +15,7 @@ public class Ball {
 	private int xpos;
 	private int ypos;
 	private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+	private Paint mPaint2 = new Paint(Paint.ANTI_ALIAS_FLAG);
 	private int canvasWidth;
 	private int canvasHeight;
 	
@@ -23,17 +23,28 @@ public class Ball {
 	public Ball(int x , int y){
 		xpos = startX = x;
 		ypos = startY = y;
-		mPaint.setColor(0xff00ff00);
-		mPaint.setStrokeWidth(4);
+		mPaint.setColor(0xFF66BD4A);
+		mPaint2.setColor(0xFFF2642F);
 	}
 	
 	public void draw(Canvas can){
+		can.drawCircle(xpos, ypos, radius + 5, mPaint2);
 		can.drawCircle(xpos, ypos, radius, mPaint);
+		xacc = 0;
+		yacc = gravity;
 	}
 	
 	public boolean update(int width, int height){
+		//update the speeed based on the velocity
 		xspeed += xacc;
 		yspeed += yacc;
+		
+		//update the position based on the velocity
+		xpos += xspeed;
+		ypos += yspeed;
+		
+		
+		
 		
 		canvasWidth = width;
 		canvasHeight = height;
@@ -41,17 +52,6 @@ public class Ball {
 		if (xpos > canvasWidth || ypos > canvasHeight){
 			return false;
 		}
-		
-		/*if(ypos > canvasHeight){
-			ypos = 0;
-		}*/
-		
-		xpos += xspeed;
-		ypos += yspeed;
-		
-		xacc = 0;
-		yacc = gravity;
-		
 		
 		//setting terminal velocity in the x and y planes
 		if (xspeed > 10){ 
@@ -88,8 +88,8 @@ public class Ball {
 	}
 	
 	public void setAcc(double xAdd, double yAdd){
-		xacc = xAdd;
-		yacc = yAdd;
+		xacc += xAdd;
+		yacc += yAdd;
 	}
 	
 	public int getX(){

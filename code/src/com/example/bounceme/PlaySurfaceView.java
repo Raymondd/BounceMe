@@ -86,7 +86,8 @@ class PlaySurfaceView extends SurfaceView implements Runnable {
 
 	@Override
 	public void run() {
-		paint.setColor(0xff000000);
+		paint.setColor(getResources().getColor(R.color.orange));
+		
 		// TODO Auto-generated method stub
 		while(true){
 			if (surfaceHolder.getSurface().isValid()) {
@@ -115,9 +116,7 @@ class PlaySurfaceView extends SurfaceView implements Runnable {
 				 String result = level.animate(canvas, w, h);
 			 
 				 if(result == "reset"){
-					 
-					 
-					 
+					 ((levelGen)getContext()).restart();
 				 }else if(result == "win"){
 					 Context context = getContext(); // from MySurfaceView/Activity
 					 Intent intent = new Intent(context, WinActivity.class);
@@ -125,7 +124,8 @@ class PlaySurfaceView extends SurfaceView implements Runnable {
 				 }
 				 
 				 // we now unlock the canvas and display the newly drawn items
-				 surfaceHolder.unlockCanvasAndPost(canvas); }
+				 surfaceHolder.unlockCanvasAndPost(canvas); 
+			 }
 			 
 		}
 	}

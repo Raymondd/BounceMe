@@ -3,6 +3,8 @@ package com.example.bounceme;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -40,13 +43,12 @@ public class levelPicker extends Activity {
 	            startActivity(i);
 	        }
 	    });
-	    
-	    
 	}
 	
 	public class GridAdapter extends BaseAdapter {
 	    private Context mContext;
 	    private String[] mNames;
+	    Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/shades.ttf");
 	    
 		public GridAdapter(Context c) {
 			mContext = c;
@@ -70,6 +72,7 @@ public class levelPicker extends Activity {
 	        
 	        TextView name = (TextView) v.findViewById(R.id.name);
 	        name.setText(mNames[position]);
+	        name.setTypeface(tf);
 	        return v;
 	    }
 	    

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file needs to go inside the /drawable folder. This file will create a drawable which
+	will scale nicely for all densities. Because of this, we can put it in the /drawable folder. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+  <stroke android:width="5dp" android:color="#ffd5d5d5"/>
+  <solid android:color="#55FFFFFF"/>
+  <corners android:radius="2dp" />
+  
+</shape>

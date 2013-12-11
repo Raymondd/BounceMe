@@ -8,16 +8,16 @@
 
     
   	<string-array name="levelNames">
-        <item>Level One</item>
-        <item>Level Two</item>
-        <item>Level Three</item>
-        <item>Level Four</item>
-        <item>Level Five</item>
-        <item>Level Six</item>
-        <item>Level Seven</item>
-        <item>Level Eight</item>
-        <item>Level Nine</item>
-        <item>Level Ten</item>
+        <item>Level 1</item>
+        <item>Level 2</item>
+        <item>Level 3</item>
+        <item>Level 4</item>
+        <item>Level 5</item>
+        <item>Level 6</item>
+        <item>Level 7</item>
+        <item>Level 8</item>
+        <item>Level 9</item>
+        <item>Level 10</item>
     </string-array>
     
 </resources>

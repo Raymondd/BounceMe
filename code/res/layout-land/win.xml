@@ -3,18 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" 
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/red">
     
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You Beat This Level!"/>
+        android:text="You Beat This Level!"
+        android:textSize="100sp"/>
     
     <Button 
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="go back to level select"/>
+        android:padding="15dp"
+        android:layout_margin="20dp"
+        android:text="go back to level select"
+        android:textSize="50sp"
+        android:textColor="@color/purple"
+        android:background="@drawable/buttons"/>
     
 
 </LinearLayout>
