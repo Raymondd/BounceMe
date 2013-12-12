@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="You Beat This Level!"
+        android:text="@string/win"
         android:textSize="100sp"/>
     
     <Button 
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:padding="15dp"
         android:layout_margin="20dp"
-        android:text="go back to level select"
+        android:text="@string/menu"
         android:textSize="50sp"
         android:textColor="@color/purple"
         android:background="@drawable/buttons"/>

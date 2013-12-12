@@ -5,8 +5,21 @@
     <string name="action_settings">Settings</string>
     <string name="play">Play</string>
     <string name="credits">Credits</string>
-
-    
+	<string name="tutorial">Tutorial</string>
+	<string name="thanks">Special Thanks to Professor Raley for guidance through this project.</string>
+    <string name="back">back</string>
+    <string name="dev">Developer: Raymond Martin</string>
+	<string name="up">^</string>
+	<string name="menu">menu</string>
+	<string name="re">restart</string>
+	<string name="reset">Reset Level Progress</string>
+	<string name="win">You Beat This Level!</string>
+  	<string name="direct">-Use the trampline to your advantage! You can bounce on the edges to reach different places and get more speed!</string>
+  	<string name="direct2">-Press on the left side to move the ball left and press on the right side to move the ball right.</string>
+	<string name="goal">-The goal is to get to the blue small ball.</string>
+	<string name="luck">Good Luck!</string>
+	<string name="time">Time Trials</string>
+  	
   	<string-array name="levelNames">
         <item>Level 1</item>
         <item>Level 2</item>

@@ -20,7 +20,7 @@
         android:gravity="bottom|right">
         
         <Button 
-            android:text="^" 
+            android:text="@string/up" 
             android:id="@+id/popoutButton" 
             android:textSize="50sp"
             android:textColor="@color/red"
@@ -33,7 +33,7 @@
 			android:layout_margin="5dp"/>
         
          <Button 
-            android:text="Menu" 
+            android:text="@string/menu" 
             android:id="@+id/menuButton" 
             android:textSize="50sp"
             android:textColor="@color/red"
@@ -47,7 +47,7 @@
 			android:layout_above="@+id/restartButton"/>
          
         <Button 
-            android:text="Restart" 
+            android:text="@string/re" 
             android:id="@id/restartButton" 
             android:textSize="50sp"
             android:textColor="@color/red"

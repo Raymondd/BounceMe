@@ -7,7 +7,7 @@
     android:background="@color/orange">
     
     <TextView 
-        android:text="Settings"
+        android:text="@string/action_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="75sp"
@@ -26,7 +26,7 @@
     
     <Button 
         android:id="@+id/reset"
-        android:text="Reset Level Progress"
+        android:text="@string/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="50sp"
@@ -37,7 +37,7 @@
     
     <Button 
         android:id="@+id/back"
-        android:text="back"
+        android:text="@string/back"
         android:layout_margin="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

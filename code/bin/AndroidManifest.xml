@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bounceme"
+    package="com.cse3345.f13.martin"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.example.bounceme.MenuActivity"
+            android:name="com.cse3345.f13.martin.MenuActivity"
             android:label="@string/app_name" 
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
@@ -26,35 +26,42 @@
         </activity>
         
       	<activity
-            android:name="com.example.bounceme.levelPicker"
+            android:name="com.cse3345.f13.martin.LevelPicker"
             android:label="@string/app_name" 
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         
      	<activity
-            android:name="com.example.bounceme.levelGen"
+            android:name = "com.cse3345.f13.martin.LevelGen"
             android:label="@string/app_name" 
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         
      	<activity
-            android:name="com.example.bounceme.WinActivity"
+            android:name="com.cse3345.f13.martin.WinActivity"
             android:label="@string/app_name" 
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         
      	<activity
-            android:name="com.example.bounceme.CreditActivity"
+            android:name="com.cse3345.f13.martin.CreditActivity"
             android:label="@string/app_name" 
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         
      	<activity
-            android:name="com.example.bounceme.SetActivity"
+            android:name="com.cse3345.f13.martin.SetActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        
+     	<activity
+            android:name="com.cse3345.f13.martin.TutActivity"
             android:label="@string/app_name" 
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
