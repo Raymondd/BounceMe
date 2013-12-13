@@ -22,19 +22,42 @@ public class WinActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.win);
 		
+		//get levelNum beat form teh intent
 		Intent i = getIntent();
 		int levelNum = i.getIntExtra("level", 1);
 		
+		//getting the previously highest level beat
 		SharedPreferences prefs = this.getSharedPreferences("prefs", Context.MODE_PRIVATE);
 		int mlevel = prefs.getInt("level", 1);
+		
+		
+		TextView unlocked = (TextView) findViewById(R.id.unlock);
 		
 		//write to the new level only if the level beat is higher then the previously highest level beat
 		if(mlevel < (levelNum + 1)){
 			Editor editor = prefs.edit();
 			editor.putInt("level", levelNum + 1);
 			editor.commit();
+			
+			//if we unlock a new level then let the user know
+			if(levelNum < 10){
+				unlocked.setText("YOU UNLOCKED LEVEL " + (levelNum + 1) + "!");
+			}
 		}
 		
+		//sets text to say the level name
+		TextView win = (TextView) findViewById(R.id.win);
+		
+		
+		//if we beat level 10 then we let the user know they beat the game
+		if(levelNum == 10){
+			unlocked.setText("YOU BEAT THE GAME!");
+			win.setText("Look for future update with more levels!");
+		}else{
+			win.setText("YOU BEAT LEVEL " + levelNum + ".");
+		}
+		
+		//sets back button to go back to level menu
 		Button back = (Button) findViewById(R.id.back);
 		
 		back.setOnClickListener(new OnClickListener(){

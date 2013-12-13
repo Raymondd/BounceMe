@@ -8,20 +8,19 @@
    android:layout_width="match_parent" 
    android:layout_height="wrap_content" 
    android:orientation="horizontal"
-   android:background="@color/blue">
+   android:background="@color/orange">
    
 <Button 
      android:id="@+id/back"
      android:text="@string/back"
-     android:layout_width="wrap_content" 
+     android:layout_width="0dp" 
      android:layout_height="wrap_content" 
      android:background="@drawable/buttons"
      android:layout_gravity="center_horizontal"
      android:textColor="@color/blue"
      android:padding="10dp"
      android:textSize="50sp"
-     android:layout_weight="1"
-     android:layout_marginRight="2dp"/> 
+     android:layout_weight="1"/> 
 
 <!--  Button 
      android:id="@+id/timeTrial"

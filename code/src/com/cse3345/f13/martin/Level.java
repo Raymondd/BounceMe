@@ -58,6 +58,8 @@ public class Level {
 				slings = new Sling[2];
 				slings[0] = new Sling(200, 500, 0); 
 				slings[1] = new Sling(600, 400, 2);
+				walls = new Wall[1];
+				walls[0] = new Wall(0, height/2, width/2 - 100, 0);
 				ball = new Ball(200, 200);
 				goal = new Goal(1150, 300);
 				break;
@@ -82,27 +84,33 @@ public class Level {
 				goal = new Goal(950, 300);
 				break;
 			case 8:
-				slings = new Sling[2];
-				slings[0] = new Sling(400, 400, 0); 
-				slings[1] = new Sling(800, 400, 0);
-				ball = new Ball(200, 100);
-				goal = new Goal(500, 500);
+				slings = new Sling[4];
+				slings[0] = new Sling(width*5/6, height - 400, 2); 
+				slings[1] = new Sling(width*4/6, height - 300, 2);
+				slings[2] = new Sling(width*3/6, height - 200, 2);
+				slings[3] = new Sling(width*1/5, height - 100, 2);
+				ball = new Ball(width*1/5, height - 400);
+				goal = new Goal(width*4/5, height - 500);
 				break;
 			case 9:
-				slings = new Sling[2];
-				slings[0] = new Sling(400, 400, 0); 
-				slings[1] = new Sling(800, 400, 0);
-				ball = new Ball(100, 100);
-				goal = new Goal(100, 500);
+				slings = new Sling[3];
+				slings[0] = new Sling(width*1/8, height - 100, 0); 
+				slings[1] = new Sling(width*3/8, height - 100, 0);
+				slings[2] = new Sling(width*6/8, height/2 - 100, 2);
+				walls = new Wall[2];
+				walls[0] = new Wall(height/2 - 100, height, width*2/4, 0);
+				walls[1] = new Wall(height/2 - 100, height, width*1/4, 0);
+				ball = new Ball(width*1/8, height/2 - 200);
+				goal = new Goal(width*7/8, height - 200);
 				break;
 			case 10:
-				slings = new Sling[4];
-				slings[0] = new Sling(300, 700, 2); 
-				slings[1] = new Sling(1000, 600, 2);
-				slings[2] = new Sling(800, 500, 2);
-				slings[3] = new Sling(700, 300, 2);
-				ball = new Ball(100, 100);
-				goal = new Goal(700, 500);
+				slings = new Sling[2];
+				slings[0] = new Sling(200, height - 100, 0); 
+				slings[1] = new Sling(width - 200, height - 100, 2);
+				walls = new Wall[1];
+				walls[0] = new Wall(0, height/2, width/2 - 200, 0);
+				ball = new Ball(200, 100);
+				goal = new Goal(900, 500);
 				break;
 		}
 	}

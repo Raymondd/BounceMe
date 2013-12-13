@@ -1,8 +1,6 @@
 package com.cse3345.f13.martin;
 
 import java.util.Random;
-
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;

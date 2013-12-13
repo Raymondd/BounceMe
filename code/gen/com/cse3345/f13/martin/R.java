@@ -42,7 +42,7 @@ public final class R {
     }
     public static final class id {
         public static final int action=0x7f0a000c;
-        public static final int action_settings=0x7f0a000e;
+        public static final int action_settings=0x7f0a0010;
         public static final int back=0x7f0a0004;
         public static final int creditsButton=0x7f0a0003;
         public static final int frame=0x7f0a0007;
@@ -56,6 +56,8 @@ public final class R {
         public static final int restartButton=0x7f0a000b;
         public static final int settingsButton=0x7f0a0001;
         public static final int tutButton=0x7f0a0002;
+        public static final int unlock=0x7f0a000e;
+        public static final int win=0x7f0a000f;
     }
     public static final class layout {
         public static final int activity_menu=0x7f030000;
