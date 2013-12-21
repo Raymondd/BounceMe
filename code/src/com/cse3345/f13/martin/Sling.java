@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import android.util.Log;
 
 public class Sling {
-	private int size = 5;
+	public static int canvasWidth;
 	private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 	private int leftX, rightX, Y;
 	private int midX, midY, midX2, midY2;
@@ -19,7 +19,10 @@ public class Sling {
 	private double bounce = .0025;
 	boolean above = true;
 	boolean forced = false;
-	private final Type[] types = {new Type(200, .006, 0xFF4989C8), new Type(300, .004, 0xFFF2642F), new Type(200, .006, 0xFF000000), new Type(150, .006, 0xFF000000)};
+	private Type[] types = {new Type(canvasWidth/7, .006, 0xFF4989C8), 
+							new Type(canvasWidth/4, .004, 0xFFF2642F), 
+							new Type(canvasWidth/7, .006, 0xFF000000), 
+							new Type(canvasWidth/9, .006, 0xFF000000)};
 	private Type type;
 	private int typeNum;
 	private int speed;
@@ -39,7 +42,7 @@ public class Sling {
 	    Random randomGenerator = new Random();
 	    speed = randomGenerator.nextInt(5) + 1;
 	    
-		mPaint.setStrokeWidth(size);
+		mPaint.setStrokeWidth(canvasWidth/200);
 	}
 
 	public void draw(Canvas can) {
@@ -47,8 +50,8 @@ public class Sling {
 		//Log.d("OUTPUT", "right:(" + midX2 + "," + midY2 + ")");
 		can.drawLine(leftX, Y, midX, midY, mPaint);
 		can.drawLine(midX2, midY2, rightX, Y, mPaint);
-		can.drawCircle(leftX, Y, 10, mPaint);
-		can.drawCircle(rightX, Y, 10, mPaint);
+		//can.drawCircle(leftX, Y, 10, mPaint);
+		//can.drawCircle(rightX, Y, 10, mPaint);
 	}
 
 	public boolean update(Ball ball){

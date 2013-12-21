@@ -19,7 +19,7 @@
      android:layout_gravity="center_horizontal"
      android:textColor="@color/blue"
      android:padding="10dp"
-     android:textSize="50sp"
+     android:textSize="40sp"
      android:layout_weight="1"/> 
 
 <!--  Button 

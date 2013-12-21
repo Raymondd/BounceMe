@@ -5,6 +5,7 @@ import android.graphics.Paint;
 
 public class Ball {
 	private int radius = 20;
+	private int strokeRadius = 25;
 	private final double gravity = .2;
 	private int startX;
 	private int startY;
@@ -15,26 +16,24 @@ public class Ball {
 	private int xpos;
 	private int ypos;
 	private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-	private Paint mPaint2 = new Paint(Paint.ANTI_ALIAS_FLAG);
-	private int canvasWidth;
-	private int canvasHeight;
+	private Paint strokePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 	
 	
 	public Ball(int x , int y){
 		xpos = startX = x;
 		ypos = startY = y;
 		mPaint.setColor(0xFF66BD4A);
-		mPaint2.setColor(0xFFF2642F);
+		strokePaint.setColor(0xFFF2642F);
 	}
 	
 	public void draw(Canvas can){
-		can.drawCircle(xpos, ypos, radius + 5, mPaint2);
+		can.drawCircle(xpos, ypos, strokeRadius, strokePaint);
 		can.drawCircle(xpos, ypos, radius, mPaint);
 		xacc = 0;
 		yacc = gravity;
 	}
 	
-	public boolean update(int width, int height){
+	public boolean update(){
 		//update the speeed based on the velocity
 		xspeed += xacc;
 		yspeed += yacc;
@@ -42,16 +41,6 @@ public class Ball {
 		//update the position based on the velocity
 		xpos += xspeed;
 		ypos += yspeed;
-		
-		
-		
-		
-		canvasWidth = width;
-		canvasHeight = height;
-		
-		if (xpos > canvasWidth || ypos > canvasHeight){
-			return false;
-		}
 		
 		/*//setting terminal velocity in the x and y planes
 		if (xspeed > 20){ 
@@ -101,6 +90,11 @@ public class Ball {
 	public void setAcc(double xAdd, double yAdd){
 		xacc += xAdd;
 		yacc += yAdd;
+	}
+	
+	public void setSize(int size){
+		radius = size;
+		strokeRadius = radius + (radius/4);
 	}
 	
 	public int getX(){

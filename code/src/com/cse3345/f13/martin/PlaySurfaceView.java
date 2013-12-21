@@ -18,7 +18,7 @@ import android.view.SurfaceView;
 
 class PlaySurfaceView extends SurfaceView implements Runnable,
 		SensorEventListener {
-	private int VIEW_WIDTH, VIEW_HEIGHT;
+	private int canvasWidth, canvasHeight;
 	private Thread thread = null;
 	private SurfaceHolder surfaceHolder;
 	private volatile boolean running = false;
@@ -87,7 +87,7 @@ class PlaySurfaceView extends SurfaceView implements Runnable,
 			switch (action) {
 			case MotionEvent.ACTION_DOWN:
 				//if the touch was on the left we give a negative else we give a poitive indicating movement direction
-				if (event.getX() < VIEW_WIDTH / 2) {
+				if (event.getX() < canvasWidth / 2) {
 					touchX = -2;
 				} else {
 					touchX = 2;
@@ -140,7 +140,7 @@ class PlaySurfaceView extends SurfaceView implements Runnable,
 		while (true) {
 			if (surfaceHolder.getSurface().isValid()) {
 				Canvas canvas = surfaceHolder.lockCanvas();
-				level = new Level(levelNum, canvas.getWidth(), canvas.getHeight());
+				level = new Level(levelNum, canvasWidth, canvasHeight);
 				surfaceHolder.unlockCanvasAndPost(canvas);
 				break;
 			}
@@ -161,7 +161,7 @@ class PlaySurfaceView extends SurfaceView implements Runnable,
 				canvas.drawRect(0, 0, w, h, paint);
 
 				// updating our element's positions and drawing them
-				String result = level.animate(canvas, w, h);
+				String result = level.animate(canvas);
 
 				if(result == "win") {
 					Context context = getContext(); // from
@@ -178,11 +178,13 @@ class PlaySurfaceView extends SurfaceView implements Runnable,
 		}
 	}
 
+	
 	// resets the ball on the level
 	public void reset() {
 		level.reset();
 	}
 
+	
 	// accellerometer accuracy change listener
 	@Override
 	public void onAccuracyChanged(Sensor arg0, int arg1) {
@@ -190,11 +192,12 @@ class PlaySurfaceView extends SurfaceView implements Runnable,
 
 	}
 
+	
 	// sets the initial width and height for the view (also sets the width and
 	// height if there is every a change to them)
 	public void onSizeChanged(int w, int h, int ow, int oh) {
-		VIEW_WIDTH = w;
-		VIEW_HEIGHT = h;
-		Log.d("OUTPUT", "(" + VIEW_WIDTH + "," + VIEW_HEIGHT + ")");
+		canvasWidth = w;
+		canvasHeight = h;
+		Log.d("OUTPUT", "(" + canvasWidth + "," + canvasHeight + ")");
 	}
 }

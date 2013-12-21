@@ -10,8 +10,9 @@
         android:gravity="center"
         android:id="@+id/name"
         android:layout_width="match_parent"
-        android:textSize="120sp"
-        android:layout_height="300dp"
+        android:textSize="40sp"
+        android:layout_height="150dp"
+        android:layout_margin="10dp"
         android:background="@drawable/buttons"
         android:textColor="@color/blue"/>
     
